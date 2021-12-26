@@ -15,7 +15,7 @@ class CreatePreferencesTable extends Migration
     {
         Schema::create('preferences', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users');//O último argumento é o nome da tabela, e o primeiro é o nome da chave
             $table->boolean('notify_emails')->default(true);
             $table->boolean('notify')->default(true);
             $table->string('background_color');

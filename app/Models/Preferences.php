@@ -9,7 +9,7 @@
     {
         use HasFactory;
 
-        protected $fillable = [
+        protected $fillable = [//Precisa para enviar os dados para o banco
             'notify_emails',
             'notify',
             'background_color',
