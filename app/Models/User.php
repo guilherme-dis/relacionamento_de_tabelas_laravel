@@ -45,6 +45,7 @@ class User extends Authenticatable
         return $this->hasOne(Preferences::class);
     }
     public function permissions(){
-        return $this->belongsToMany(Permission::class);
+        return $this->belongsToMany(Permission::class)
+                ->withPivot(['active']);//atravez do relacionamento, retornar valores da tabela pivot
     }
 }

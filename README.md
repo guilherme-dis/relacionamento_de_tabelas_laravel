@@ -7,3 +7,8 @@ preferences e user
 
 
 one to many é nos course, lesson e module
+
+many to many é as permissions
+
+
+many to many pivot, recupera os dados que liga as duas tabelas
