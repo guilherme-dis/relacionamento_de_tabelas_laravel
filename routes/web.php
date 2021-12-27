@@ -2,7 +2,8 @@
 
 use App\Models\{
     User,
-    Course
+    Course,
+    Permission
 };
 use Illuminate\Support\Facades\Route;
 
@@ -75,7 +76,43 @@ Route::get('/one-to-many', function () {
 
 });
 
+Route::get('/many-to-many',function(){
 
+    //Criando uma permissão nova
+    //dd(Permission::create(['name'=>'menu_03']));
+
+    //Recupera um usuário e já traz as permissions
+    //$user = User::with('permissions')->find(1);
+    
+    //Jogando para dentro das permissions a permission de id 1
+    //$permission = Permission::find(1);
+
+    //Salvando uma permissão no usuário
+    //$user->permissions()->save($permission);
+
+    //Salvando várias permissões ao mesmo tempo
+    /*
+    $user->permissions()->saveMany([
+        Permission::find(1),
+        Permission::find(2),
+        //Permission::find(3),
+    ]);*/
+
+    //o sync deleta o que tinha(exeto os repetidos) e coloca os novos
+    //$user->permissions()->sync([2]);
+
+
+    //adiciona um novo independente dos que já existem
+    //$user->permissions()->attach([1]);
+    
+    //Desincroniza a permissão de id 1 desse usuário
+    //$user->permissions()->detach([1]);
+
+
+    //$user->refresh();
+
+    //dd($user->permissions);
+});
 
 
 
