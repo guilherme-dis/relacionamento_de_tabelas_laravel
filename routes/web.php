@@ -3,7 +3,8 @@
 use App\Models\{
     User,
     Course,
-    Permission
+    Permission,
+    Image
 };
 use Illuminate\Support\Facades\Route;
 
@@ -126,7 +127,25 @@ Route::get('/many-to-many-pivot', function () {
     // }
 });
 
+Route::get('/one-to-one-polymorphic',function(){
+    
+    /*$user = User::first();
 
+        $data=['path'=>'path caminho'];
+    if($user->image){
+        $user->image->update($data);
+    }else{
+        $user->image()->create($data);
+
+    }
+    $user->image->delete();
+
+    // $user->image()->save(
+    //     new Image(['path'=>'paht/nome-image'])
+    // );
+
+    dd($user->image->path);*/
+});
 
 
 Route::get('/', function () {
