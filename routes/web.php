@@ -127,24 +127,31 @@ Route::get('/many-to-many-pivot', function () {
     // }
 });
 
-Route::get('/one-to-one-polymorphic',function(){
-    
-    /*$user = User::first();
+Route::get('/one-to-one-polymorphic', function () {
 
-        $data=['path'=>'path caminho'];
+    //Pegar o primeiro usuário
+    //$user = User::first();
+
+    //$data=['path'=>'path caminho'];
+
+    //Caso o usuário não tenha image, cria, caso contrário, faz o update
+
+    /*
     if($user->image){
         $user->image->update($data);
     }else{
-        $user->image()->create($data);
+        //$user->image()->create($data);
+        $user->image()->save(
+        new Image(['path'=>'paht/nome-image'])
+        );
+    }*/
 
-    }
-    $user->image->delete();
+    //Para deletar
+    //$user->image->delete();
 
-    // $user->image()->save(
-    //     new Image(['path'=>'paht/nome-image'])
-    // );
 
-    dd($user->image->path);*/
+
+    //dd($user->image->path);
 });
 
 

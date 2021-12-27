@@ -12,3 +12,7 @@ many to many é as permissions
 
 
 many to many pivot, recupera os dados que liga as duas tabelas
+
+Quando vamos fazer o polimorfismo, temos uma tabela de imagem, e classes que tem imagens, assim, lincamos tudo aqui.
+As configurações estão na migrate image, e o model
+
