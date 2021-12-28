@@ -9,6 +9,7 @@ class Course extends Model
 {
     use HasFactory;
     protected $fillable =['name','avalible'];
+    
     public function modules(){
         return $this->hasMany(Module::class);
     }
@@ -19,6 +20,9 @@ class Course extends Model
 
     public function comments(){
         return $this->morphMany(Comment::class,'commentable');
+    }
+    public function tags(){
+        return $this->morphToMany(Tag::class,'taggable');
     }
 }
  

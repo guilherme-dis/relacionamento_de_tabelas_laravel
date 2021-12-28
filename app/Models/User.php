@@ -55,4 +55,9 @@ class User extends Authenticatable
     {
         return $this->morphOne(Image::class,'imageable');//imageable é o nome da coluna do image que faz o relacionamento.
     }
+
+
+    public function tags(){
+        return $this->morphToMany(Tag::class,'taggable');
+    }
 }

@@ -6,7 +6,8 @@ use App\Models\{
     Permission,
     Image,
     Comment,
-    Lesson
+    Lesson,
+    Tag
 };
 use Illuminate\Support\Facades\Route;
 
@@ -14,12 +15,9 @@ Route::get('/one-to-one', function () {
     //Rota para testes da relação one to one
     //Criação, Modificação e exclusão
 
-    //$user = User::first();
     $user = User::with('preferences')->first(); //Sempre usar o with, que diminui as consultas ao banco
 
-    $data = [
-        'background_color' => '#000',
-    ];
+    $data = ['background_color' => '#000',];
 
     if ($user->preferences) { //Se já existir as preferencias em um usuário, atualiza
         $user->preferences->update($data);
@@ -176,6 +174,25 @@ Route::get('/one-to-many-polymorphic',function(){
     //pegando um comentário e imprimindo
     //$comment=Comment::find(1);
     //dd($comment->commentable);
+});
+
+Route::get('/many-to-many-polymorphic',function(){
+    $user = User::first();
+    $course=Course::first();
+    //Tag::create(['name'=>'tag1','color'=>'blue']);
+    //Tag::create(['name'=>'tag2','color'=>'red']);
+    //Tag::create(['name'=>'tag3','color'=>'green']);
+    
+    //$user->tags()->attach(4);
+     //$course->tags()->attach(4);
+
+    // dd($course->tags);
+
+    //$tag=Tag::find(4);
+    //$tag=Tag::where('name','tag2')->first();
+
+    //dd($tag->users);
+
 });
 
 Route::get('/', function () {
