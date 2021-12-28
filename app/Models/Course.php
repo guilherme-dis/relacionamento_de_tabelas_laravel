@@ -16,5 +16,9 @@ class Course extends Model
     {
         return $this->morphOne(Image::class,'imageable');//imageable é o nome do relacionamento que se encontra na classe Image.
     }
+
+    public function comments(){
+        return $this->morphMany(Comment::class,'commentable');
+    }
 }
  

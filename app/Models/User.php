@@ -53,6 +53,6 @@ class User extends Authenticatable
 
     public function image()
     {
-        return $this->morphOne(Image::class,'imageable');//imageable é o nome do relacionamento que se encontra na classe Image.
+        return $this->morphOne(Image::class,'imageable');//imageable é o nome da coluna do image que faz o relacionamento.
     }
 }

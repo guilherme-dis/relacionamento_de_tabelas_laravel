@@ -4,7 +4,9 @@ use App\Models\{
     User,
     Course,
     Permission,
-    Image
+    Image,
+    Comment,
+    Lesson
 };
 use Illuminate\Support\Facades\Route;
 
@@ -153,7 +155,28 @@ Route::get('/one-to-one-polymorphic', function () {
 
     //dd($user->image->path);
 });
+Route::get('/one-to-many-polymorphic',function(){
+    //Pegando um curso
+    // $course = Course::first();
 
+    //Fazendo um comentário para esse curso
+    // $course->comments()->create([
+    //     'subject'=>'Novo Comentário',
+    //     'content'=>'Apenas um comentário'
+    // ]);
+
+    //Fazendo a mesma coisa para lessons
+    // $lesson=Lesson::find(1);
+    // $lesson->comments()->create([
+    //     'subject'=>'Novo Comentário',
+    //     'content'=>'Apenas um comentário'
+    // ]);
+
+
+    //pegando um comentário e imprimindo
+    //$comment=Comment::find(1);
+    //dd($comment->commentable);
+});
 
 Route::get('/', function () {
     return view('welcome');
