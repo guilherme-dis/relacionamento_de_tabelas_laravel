@@ -303,8 +303,8 @@ public function comments(){
 Um exemplo de uso seria:
 
 ```PHP
-   
-    
+
+
     //Pegando um curso
     //Fazendo um comentário para esse curso
     $course = Course::first();
@@ -327,11 +327,12 @@ Um exemplo de uso seria:
 ```
 
 # MANY TO MANY - POLYMORPHIC
+
 Vamos relacionar Tag's com as classes que queremos, sendo assim, no model, precisamos fazer uma função com todos
 
-
 \App\Models\Tag
-~~~PHP
+
+```PHP
     public function users(){
         return $this->morphedByMany(User::class,'taggable');
     }
@@ -339,20 +340,21 @@ Vamos relacionar Tag's com as classes que queremos, sendo assim, no model, preci
     public function courses(){
         return $this->morphedByMany(Course::class,'taggable');
     }
-~~~
+```
 
 E em cada classe tem que ter esse código abaixo
 
-~~~PHP
+```PHP
     public function tags(){
         return $this->morphToMany(Tag::class,'taggable');
     }
-~~~
+```
 
 ### Migrations:
 
 tags_table
-~~~PHP
+
+```PHP
 public function up()
     {
         Schema::create('tags', function (Blueprint $table) {
@@ -380,4 +382,4 @@ public function up()
         Schema::dropIfExists('taggables');
         Schema::dropIfExists('tags');
     }
-~~~
+```
